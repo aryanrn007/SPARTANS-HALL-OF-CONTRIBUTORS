@@ -1,0 +1,10 @@
+Here are some 10-12 word bios you can use for your card. Just copy and paste one!
+
+- "Future full-stack developer learning the ropes of open-source one PR at a time."
+- "Passionate about coding, coffee, and making my first real open source contribution."
+- "Computer Science student building skills and breaking things in the digital world."
+- "Aspiring software engineer exploring web development and community-driven projects."
+- "Debugging my way through life and writing my first lines of open-source."
+- "Tech enthusiast who loves learning new frameworks and building cool things."
+- "Turning coffee into code and dreams into reality. First PR unlocked!"
+- "Always curious, always coding. Excited to be part of the open-source community."

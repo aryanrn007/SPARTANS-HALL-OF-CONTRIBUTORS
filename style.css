@@ -1,0 +1,158 @@
+:root {
+    --pixel-black: #0f0f0f;
+    --pixel-white: #f0f0f0;
+    --pixel-yellow: #facc15;
+    --pixel-blue: #3b82f6;
+    --pixel-red: #ef4444;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+    background-image: url('assets/contribution_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--pixel-white);
+    min-height: 100vh;
+}
+
+/* Semi-transparent dark overlay to make text readable */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+header {
+    text-align: center;
+    padding: 4rem 1rem 2rem 1rem;
+    text-shadow: 4px 4px 0 var(--pixel-black);
+}
+
+header h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    color: var(--pixel-white);
+}
+
+.subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #cbd5e1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+/* The exact card HTML provided by user, styled with retro pixel theme */
+.card {
+    background-color: rgba(15, 15, 15, 0.85);
+    border: 4px solid var(--pixel-white);
+    padding: 2rem 1.5rem;
+    width: 100%;
+    max-width: 350px;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 8px 8px 0 var(--pixel-black);
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0 var(--pixel-black);
+}
+
+.badge {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    background-color: var(--pixel-red);
+    border: 3px solid var(--pixel-white);
+    padding: 0.5rem;
+    transform: rotate(5deg);
+    box-shadow: 4px 4px 0 var(--pixel-black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.medal {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+}
+
+.badge-text {
+    font-size: 0.6rem;
+    margin: 0;
+    color: var(--pixel-white);
+}
+
+.name {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--pixel-white);
+    line-height: 1.4;
+}
+
+.bio {
+    font-size: 0.7rem;
+    color: #a1a1aa;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    min-height: 3rem;
+}
+
+.credit {
+    font-size: 0.6rem;
+    color: var(--pixel-blue);
+    margin-bottom: 1.5rem;
+}
+
+.celebrate-btn {
+    background-color: var(--pixel-black);
+    color: var(--pixel-white);
+    border: 3px solid var(--pixel-white);
+    padding: 0.75rem 1rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 4px 4px 0 var(--pixel-white);
+    transition: all 0.1s;
+    width: 100%;
+}
+
+.celebrate-btn:hover {
+    background-color: var(--pixel-yellow);
+    color: var(--pixel-black);
+}
+
+.celebrate-btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 0 transparent;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+}
