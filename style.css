@@ -91,6 +91,8 @@ header h1 {
     max-width: 350px;
     box-sizing: border-box;
     position: relative;
+    margin-top: 24px;   /* space for the overflowing badge */
+    margin-right: 24px; /* space for the overflowing badge */
     box-shadow: 8px 8px 0 var(--pixel-black);
     text-align: center;
     transition: transform 0.2s ease-in-out;
@@ -175,5 +177,124 @@ header h1 {
 @media (max-width: 600px) {
     header h1 {
         font-size: 2rem;
+    }
+}
+
+/* ===== THEMED CELEBRATION MODAL ===== */
+.pixel-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.pixel-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.pixel-modal {
+    background: var(--pixel-black);
+    border: 4px solid var(--pixel-white);
+    box-shadow: 8px 8px 0 var(--pixel-yellow), 12px 12px 0 var(--pixel-black);
+    padding: 2.5rem 2rem;
+    max-width: 480px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    animation: modal-pop 0.25s ease forwards;
+}
+
+@keyframes modal-pop {
+    from { transform: scale(0.7) rotate(-3deg); opacity: 0; }
+    to   { transform: scale(1) rotate(0deg);   opacity: 1; }
+}
+
+.pixel-modal .modal-badge {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+    animation: bounce 0.6s infinite alternate;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-10px); }
+}
+
+.pixel-modal h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    color: var(--pixel-yellow);
+    text-shadow: 3px 3px 0 var(--pixel-black);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.pixel-modal p {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.6rem;
+    color: #a1a1aa;
+    line-height: 2;
+    margin-bottom: 2rem;
+}
+
+.pixel-modal .modal-name {
+    color: var(--pixel-blue);
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.pixel-modal .close-btn {
+    background-color: var(--pixel-yellow);
+    color: var(--pixel-black);
+    border: 3px solid var(--pixel-white);
+    padding: 0.75rem 1.5rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.65rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 4px 4px 0 var(--pixel-black);
+    transition: all 0.1s;
+}
+
+.pixel-modal .close-btn:hover {
+    background-color: var(--pixel-white);
+    color: var(--pixel-black);
+}
+
+.pixel-modal .close-btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
+
+/* confetti pixels */
+.confetti-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.confetti-pixel {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: -20px;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
     }
 }
